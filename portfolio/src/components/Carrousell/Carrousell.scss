@@ -2,10 +2,11 @@
     color: white;
     display: flex;
     align-items: center;
-    width: 40%;
+    width: 50%;
     position: relative;
+    margin-top: 4rem;
     
-    &__container{
+    &__container_1{
         display:flex;
         width: 100%;
         scroll-behavior: smooth;
@@ -13,8 +14,9 @@
     }
     &__img{
         min-width:50%;
-        height: 300px;
+        height: 100px;
         object-fit: cover;
+        cursor: pointer;
      
     }
     &__arrow{

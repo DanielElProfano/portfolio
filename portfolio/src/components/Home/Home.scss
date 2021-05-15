@@ -10,4 +10,96 @@
     &__img{
         width: 60%;
     }
+    &__animation{
+        visibility: hidden;
+    }
+    &__text{
+      color: white;
+
+    }
+    &__picture{
+      height: 400px;
+      width: 400px;
+      border: 1px solid white ;
+      // box-shadow: 0px 0px 20px white
+      border-radius: 8px;
+
+    }
+    &__selectedImg{
+      width: 400px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+
+      object-position: center;
+    }
+    &__description{
+      margin-left: 2rem;
+      font-size: 2rem;
+      color: white;}
 }
+
+.slideUpi{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation-name: slideUpi;
+  animation-duration: 1s;
+  visibility: visible;
+}
+.animatedImg{ 
+  display: flex;
+  object-position: center;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  animation-name: toLeft;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+.animatedDesc{
+  opacity: 0;
+  margin-left: 2rem;
+  font-size: 2rem;
+  color: white;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  width: 300px;
+
+
+}
+
+@keyframes fadeIn{
+  0% {
+    opacity: 0;
+   
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes toLeft{
+  0% {
+  
+    -webkit-transform: translateX(0%);
+  }
+  100% {
+    -webkit-transform: translateX(-50%);
+  }
+}
+
+@keyframes slideUpi  {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(50%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }

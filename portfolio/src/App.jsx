@@ -7,16 +7,18 @@ import Contact from './components/Contact';
 import Home from './components/Home';
 
 const App = () => {
+
+
   return (
     <Router>
       <Switch>
         <div className="b-app">
           <NavBar/>
-          <Home/>
+          <Route exact path="/" component={Home}/>
           <Route exact path="/cv" component={Cv}/>
           <Route exact path="/about" component={About} />
           <Route exact path="/contact" component={Contact}/>
-          </div>
+        </div>
       </Switch>
     </Router>
   );
