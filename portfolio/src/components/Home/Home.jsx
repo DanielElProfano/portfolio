@@ -1,8 +1,9 @@
 import './Home.scss';
+import './icons/style.css';
 import constants from '../../constants/arraysImg'
 import Carrousell from '../Carrousell';
 import Main from '../../Containers/Main';
-import { useEffect, useState } from 'react';
+import {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Home = () => {
 
@@ -38,6 +39,7 @@ const Home = () => {
         }
         const exitDesc = document.querySelector('.animatedImg');
         if (!exitDesc){
+            debugger
             document.querySelector(`#pic${id}`).className = 'animatedImg';
             document.querySelector(`#desc${id}`).className = 'animatedDesc';
         }
@@ -53,23 +55,31 @@ const Home = () => {
                 <div className="b-home__fisrtContainer">
                     <div id="animation1" className="b-home__animation">  {/*animation slide In */}
                         <div className="b-home__title">
-                        <h1 className="b-home__text">Ash Academy</h1>
-                    </div>
-                            <div className="b-home__container">
-                                <div id="pic1" className="b-home__picture">
-                                    <img className="b-home__selectedImg" src={picture} alt=""/>
-                                </div>
-                                <p id="desc1" className="b-home__description">{descriptionAsh[index1]}</p>
+                            <h1 className="b-home__text">Ash Academy</h1>
+                            <span class="b-home__icon icon-react"></span>
+                            <span class="b-home__icon icon-node-dot-js"></span>
+                            <span class="b-home__icon icon-mongodb"></span>
+                            <span class="b-home__icon icon-heroku"></span>
+                        {/* <span class="icon-angular"></span> */}
+                        </div>
+                        <div className="b-home__container">
+                            <div id="pic1" className="b-home__picture">
+                                <img className="b-home__selectedImg" src={picture} alt=""/>
                             </div>
-                            <Carrousell picture={handleImage} images={arrayAsh} id={1}/>
+                            <p id="desc1" className="">{descriptionAsh[index1]}</p>
+                        </div>
+                        <Carrousell picture={handleImage} images={arrayAsh} id={1}/>
                     </div>
                 </div>
                 <div className="b-home__fisrtContainer">
                         <div id="animation2" className="b-home__animation">  {/*animation slide In */}
+                            <div className="b-home__title">
+                                <h1 className="b-home__text">Reciclo</h1>
+                                <span class="b-home__icon icon-react"></span>
+                                <span class="b-home__icon icon-node-dot-js"></span>
+                                <span class="b-home__icon icon-mongodb"></span>
+                            </div>
                             <div className="b-home__container">
-                                <div className="b-home__title">
-                                    <h1 className="b-home__text">Reciclo</h1>
-                                </div>
                                 <div id="pic2" className="b-home__picture">
                                     <img className="b-home__selectedImg" src={picture2} alt=""/>
                                 </div>

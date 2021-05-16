@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowAltCircleLeft, faArrowAltCircleRight, faCarBattery, faOilCan, faScroll, faTshirt, faWineBottle} from '@fortawesome/free-solid-svg-icons';
 import './Carrousell.scss';
 
 const Carrousell = (props) => {
@@ -27,7 +28,7 @@ const Carrousell = (props) => {
         <>
             <div id={`Carrousell_${id}`} className="b-carrousell">
                 <div onClick={handleScrollRight} className="b-carrousell__arrow b-carrousell__arrow--left">
-                    <span>izq</span>
+                    <span>  <FontAwesomeIcon  className="b-pickup__icon" icon={faArrowAltCircleLeft} /></span>
                 </div>
             
                 <div className={`b-carrousell__container_${id}`}>
@@ -38,7 +39,7 @@ const Carrousell = (props) => {
                     })}
                 </div>
                 <div onClick={handleScrollLeft} className="b-carrousell__arrow b-carrousell__arrow--right">
-                <span>dhc</span>
+                   <span><FontAwesomeIcon  className="b-pickup__icon" icon={faArrowAltCircleRight} /></span>
             </div>
             </div>
            
