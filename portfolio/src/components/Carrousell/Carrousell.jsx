@@ -18,7 +18,8 @@ const Carrousell = (props) => {
     const handleImage = (index, src) => {
         const source = {
             src,
-            index
+            index,
+            id
         }
         props.picture(source)
     }

@@ -1,63 +1,83 @@
 import './Home.scss';
+import constants from '../../constants/arraysImg'
 import Carrousell from '../Carrousell';
 import Main from '../../Containers/Main';
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-import { faReact} from '@fortawesome/free-solid-svg-icons';
 const Home = () => {
-    useEffect(()=>{
-       
-    },[])
-    const arrayAsh = [
-        './assets/images/AshAcademy.png',
-        './assets/images/modal.png',
-        './assets/images/prof1.jpg',
-        './assets/images/prof2.jpg',
-        './assets/images/prof4.jpg',
-    ];
-    const descriptionArray = [
-        'ASH Academy. Proyecto realizado en React y Node',
-        'Uso de modal para dar de alta profesores y alumnos',
-    ];
+
+    const arrayAsh = constants.arrayAsh;
+    const descriptionAsh= constants.descriptionArray;
+    const arrayReciclo = constants.arrayReciclo;
+    const descriptionReciclo = constants.descriptionReciclo;
 
     const [picture,setPicture] = useState(arrayAsh[0]);
-    const [index, setIndex] = useState(null);
+    const [picture2, setPicture2] = useState(arrayReciclo[0]);
+    const [index1, setIndex1] = useState(null);
+    const [index2, setIndex2] = useState(null);
+
     window.onscroll = function() {myFunction()};
+
     function myFunction() {
-        if (window.pageYOffset > 350) {
-            document.getElementById("animation").className = "slideUpi";
+        if (window.pageYOffset > 150) {
+            document.getElementById("animation1").className = "slideUpi";
+        if (window.pageYOffset> 650) {
+            document.getElementById("animation2").className = "slideUpi"
+        }
   }}
 
     const handleImage = (img) => {
-        const {src, index} = img;
-        setPicture(src);
-       
+        const {src, index, id} = img;
+        if(id === 1) {
+            setPicture(src);
+            setIndex1(index);
+        }
+        if(id === 2){
+            setIndex2(index)
+            setPicture2(src);
+        }
         const exitDesc = document.querySelector('.animatedImg');
         if (!exitDesc){
-            document.querySelector('#desc1').className = 'animatedDesc';
-            setIndex(index);
-            document.querySelector("#pic1").className = 'animatedImg';
+            document.querySelector(`#pic${id}`).className = 'animatedImg';
+            document.querySelector(`#desc${id}`).className = 'animatedDesc';
         }
         else{
-            // document.querySelector('.animatedDesc')
+            document.querySelector(`#pic${id}`).className = 'animatedImg';
+            document.querySelector(`#desc${id}`).className = 'animatedDesc';
         }   
     }   
     return(
         <>
             <div className="b-home">
                <Main/>
-               <div className="b-home__title">
-                   <h1 className="b-home__text">Ash Academy</h1>
-               </div>
-               <div id="animation" className="b-home__animation">
-                    <div id="pic1" className="b-home__picture">
-                        <img className="b-home__selectedImg" src={picture} alt=""/>
-                        <p id="desc1" className="b-home__description">{descriptionArray[index]}</p>
+                <div className="b-home__fisrtContainer">
+                    <div id="animation1" className="b-home__animation">  {/*animation slide In */}
+                        <div className="b-home__title">
+                        <h1 className="b-home__text">Ash Academy</h1>
                     </div>
-                    
-                    <Carrousell picture={handleImage} images={arrayAsh} id={1}/>
-               </div>
+                            <div className="b-home__container">
+                                <div id="pic1" className="b-home__picture">
+                                    <img className="b-home__selectedImg" src={picture} alt=""/>
+                                </div>
+                                <p id="desc1" className="b-home__description">{descriptionAsh[index1]}</p>
+                            </div>
+                            <Carrousell picture={handleImage} images={arrayAsh} id={1}/>
+                    </div>
+                </div>
+                <div className="b-home__fisrtContainer">
+                        <div id="animation2" className="b-home__animation">  {/*animation slide In */}
+                            <div className="b-home__container">
+                                <div className="b-home__title">
+                                    <h1 className="b-home__text">Reciclo</h1>
+                                </div>
+                                <div id="pic2" className="b-home__picture">
+                                    <img className="b-home__selectedImg" src={picture2} alt=""/>
+                                </div>
+                                <p id="desc2" className="b-home__description">{descriptionReciclo[index2]}</p>
+                            </div>
+                            <Carrousell picture={handleImage} images={arrayReciclo} id={2}/>
+                        </div>
+                </div>
             </div>
         </>
     )

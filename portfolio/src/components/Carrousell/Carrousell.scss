@@ -12,6 +12,12 @@
         scroll-behavior: smooth;
         overflow-x: hidden;
     }
+    &__container_2{
+        display:flex;
+        width: 100%;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
     &__img{
         min-width:50%;
         height: 100px;
