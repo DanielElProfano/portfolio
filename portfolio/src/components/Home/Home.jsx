@@ -3,10 +3,11 @@ import './icons/style.css';
 import constants from '../../constants/arraysImg'
 import Carrousell from '../Carrousell';
 import Main from '../../Containers/Main';
-import {useState} from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-const Home = () => {
+import {useEffect, useState} from 'react';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+const Home = (props) => {
 
+    const { colorHome } = props;
     const arrayAsh = constants.arrayAsh;
     const descriptionAsh= constants.descriptionArray;
     const arrayReciclo = constants.arrayReciclo;
@@ -16,16 +17,30 @@ const Home = () => {
     const [picture2, setPicture2] = useState(arrayReciclo[0]);
     const [index1, setIndex1] = useState(null);
     const [index2, setIndex2] = useState(null);
+    // const [backGroundColor, setBackgroundColor] = useState(""); //cambia el color del backGround
 
-    window.onscroll = function() {myFunction()};
+    useEffect(() => {
+        // console.log("props de Home: " + props.color);
+        // const originPath = {
+        //     color: "blue",
+        //     home: true,
+        // }
+        // debugger
+        // props.colorHome(originPath);
+        window.addEventListener('scroll', myFunction);
+        return () => {
+            window.removeEventListener('scroll', myFunction); //remove the listener;
+        }
+    },[]);
 
     function myFunction() {
         if (window.pageYOffset > 150) {
             document.getElementById("animation1").className = "slideUpi";
+        }
         if (window.pageYOffset> 650) {
             document.getElementById("animation2").className = "slideUpi"
         }
-  }}
+    };
 
     const handleImage = (img) => {
         const {src, index, id} = img;
@@ -55,12 +70,13 @@ const Home = () => {
                 <div className="b-home__fisrtContainer">
                     <div id="animation1" className="b-home__animation">  {/*animation slide In */}
                         <div className="b-home__title">
-                            <h1 className="b-home__text">Ash Academy</h1>
+                            <a href="https://ashacademy.netlify.app">
+                                <h1 className="b-home__text">Ash Academy</h1>
+                            </a>
                             <span class="b-home__icon icon-react"></span>
                             <span class="b-home__icon icon-node-dot-js"></span>
                             <span class="b-home__icon icon-mongodb"></span>
                             <span class="b-home__icon icon-heroku"></span>
-                        {/* <span class="icon-angular"></span> */}
                         </div>
                         <div className="b-home__container">
                             <div id="pic1" className="b-home__picture">

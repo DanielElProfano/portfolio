@@ -13,7 +13,7 @@
             margin-top: 8rem;
             margin-bottom: 28rem;
         }
-        }
+    }
     
     &__title{
         margin:0;
@@ -34,7 +34,7 @@
         margin-bottom: 2rem;
         &--red{
             display: inline;
-            color:#2c547b
+            color:#2c547b;
         }
 
     }
@@ -51,7 +51,7 @@
         border: 20px solid white;
         border-radius: 50%;
         margin-top: 5rem;
-        background-image: url("./about/foto.jpg");
+        background-image: url("./about/londres.jpg");
         width: 540px;
         height: 540px;
         background-size: cover;
@@ -69,7 +69,7 @@
         &--3{
             width: 405px;
             height: 405px;
-            // background-image: url("../../../../assets/starlight.jpg");
+            background-image: url("./about/foto.jpg");
             background-position: 50% 54.32%;
             margin: 370px auto 0 122px;
             border: 10px solid white;
@@ -79,16 +79,16 @@
             height: 350px;
             // background-image: url("../../../../assets/starlight.jpg");
             background-position: 50% 54.32%;
-            margin: 370px auto 0 122px;
+            margin: 370px auto 0 454px;
             border: 10px solid white;
         }
         &--4{
-            width: 200px;
-            height: 200px;
-            // background-image: url("../../../../assets/ironman.jpg");
-            background-position: 50% 54.32%;
-            margin: -183px auto 0 478px;
-            border: 20px solid #f01327;
+        //     width: 200px;
+        //     height: 200px;
+        //     // background-image: url("../../../../assets/ironman.jpg");
+        //     background-position: 50% 54.32%;
+        //     margin: -183px auto 0 478px;
+        //     border: 20px solid #f01327;
         }
     }
     &__circle{
@@ -107,42 +107,36 @@
             margin: -666px auto 0 160px;
         }
     }
-    &__text{
+    // &__text{
 
-       margin-bottom: 0.5rem;
-       font-size: 1.5rem;
+    //    margin-bottom: 0.5rem;
+    //    font-size: 1.5rem;
         
 
-        &--big{
-            font-size: 2rem;
-            display: inline;
-            color: gray;
-        }
-        &--red{
-            color:#f01327;
-        }
-        &--margin{
-            margin-left: 1rem;
-        }
+    //     &--big{
+    //         font-size: 2rem;
+    //         display: inline;
+    //         color: gray;
+    //     }
+    //     &--red{
+    //         color:#f01327;
+    //     }
+    //     &--margin{
+    //         margin-left: 1rem;
+    //     }
 
-
-    }
-    &__comentarios{
-        margin-top: 2rem;
-
-        &--prog{
-            margin-top: 2rem;
-        }
-    }
-
-    &__flex-cols{
-        display:flex;
-        
-    }
-    // &__svg{
-    //     height: 20px;
-    //     display: inline;
 
     // }
+    // &__comentarios{
+    //     margin-top: 2rem;
 
+    //     &--prog{
+    //         margin-top: 2rem;
+    //     }
+    // }
+
+    // &__flex-cols{
+    //     display:flex;
+        
+    // }
 }

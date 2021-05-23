@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowAltCircleLeft, faArrowAltCircleRight, faCarBattery, faOilCan, faScroll, faTshirt, faWineBottle} from '@fortawesome/free-solid-svg-icons';
+import { faArrowAltCircleLeft, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import './Carrousell.scss';
 
 const Carrousell = (props) => {
