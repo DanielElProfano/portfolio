@@ -1,36 +1,28 @@
-import './App.scss';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import NavBar from './components/NavBar';
-import About from './components/About';
-import { useState, useEffect } from 'react';
-import Cv from './components/Cv'; 
-import Contact from './components/Contact';
-import Home from './components/Home';
+import "./App.scss";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Suspense } from "react";
+import routes from "./config/router/routes.js";
+import NavBar from "./components/common/NavBar";
+import Footer from "./components/common/Footer";
 
 const App = () => {
-  const [color, setColor] = useState("blue");
-
-  const changeColor = (navColor) => {
-    if(navColor) setColor(navColor);
-
-
-  }
-  const changeColor2 = () => {
-    debugger
-  }
   return (
     <Router>
-      <Switch>
+      <Suspense fallback="cargado....">
         <div className="b-app">
-          <NavBar color={changeColor} />
-          <Route exact path="/" component={Home}/>
-          <Route exact path="/cv" component={Cv}/>
-          <Route exact path="/about" component={About} />
-          <Route exact path="/contact" component={Contact}/>
+          <NavBar />
+          <Switch>
+            {routes.map(({ path, component: Component }) => (
+              <Route path={path} exact>
+                <Component />
+              </Route>
+            ))}
+          </Switch>
+          <Footer />
         </div>
-      </Switch>
+      </Suspense>
     </Router>
   );
-}
+};
 
 export default App;

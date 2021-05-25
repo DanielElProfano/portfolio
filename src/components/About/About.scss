@@ -19,7 +19,9 @@
         margin:0;
         margin-top: 2rem;
         color: white;
-        margin-left: 10rem;
+        display: flex;
+        flex-direction: column;
+        // margin-left: 10rem;
         
         &--2{
             color:black;
@@ -46,21 +48,37 @@
        
         margin:0;
     }
-    
-    &__img{
-        border: 20px solid white;
+    &__img-container{
+        // position: absolute;
+        // top:0;
+        // left:0;
+        // width: 100%;
+        // height: 100%;
+        width: 300px;
+        height: 300px;
         border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+    }
+    &__img{
+        position:relative;
+        // padding-top: 50%;
+        border: 20px solid white;
+        // border-radius: 50%;
         margin-top: 5rem;
-        background-image: url("./about/londres.jpg");
-        width: 540px;
-        height: 540px;
+        // width: 50%;
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 50%;
+       
         background-size: cover;
         
         z-index: 2;
         &--2{
             margin-left: 14rem;
-            width:600px;
-            height: 600px;
+            width: 520px;
+            height: 520px;
             border-radius: 50%;
             border: none;
             background-image: url("./about/Mtb.jpg");
@@ -82,14 +100,7 @@
             margin: 370px auto 0 454px;
             border: 10px solid white;
         }
-        &--4{
-        //     width: 200px;
-        //     height: 200px;
-        //     // background-image: url("../../../../assets/ironman.jpg");
-        //     background-position: 50% 54.32%;
-        //     margin: -183px auto 0 478px;
-        //     border: 20px solid #f01327;
-        }
+ 
     }
     &__circle{
         width: 114px;
@@ -107,36 +118,35 @@
             margin: -666px auto 0 160px;
         }
     }
-    // &__text{
+    &__text{
 
-    //    margin-bottom: 0.5rem;
-    //    font-size: 1.5rem;
+       margin-bottom: 0.5rem;
+       font-size: 1.5rem;
         
 
-    //     &--big{
-    //         font-size: 2rem;
-    //         display: inline;
-    //         color: gray;
-    //     }
-    //     &--red{
-    //         color:#f01327;
-    //     }
-    //     &--margin{
-    //         margin-left: 1rem;
-    //     }
+        &--big{
+            font-size: 2rem;
+            margin-left: 2rem;
+        }
+        &--red{
+            color:#f01327;
+        }
+        &--margin{
+            margin-left: 1rem;
+        }
 
 
-    // }
-    // &__comentarios{
-    //     margin-top: 2rem;
+    }
+    &__comentarios{
+        margin-top: 1rem;
 
-    //     &--prog{
-    //         margin-top: 2rem;
-    //     }
-    // }
+        &--prog{
+            margin-top: 2rem;
+        }
+    }
 
-    // &__flex-cols{
-    //     display:flex;
+    &__flex-cols{
+        display:flex;
         
-    // }
+    }
 }
