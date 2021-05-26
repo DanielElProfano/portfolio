@@ -13,7 +13,7 @@ const About = () => {
                     <h3 className="b-about__h3">Trust, hardworker, empathy.</h3>
                 </div>
             </section>
-            <section className="b-about__section b-about__section--2">
+            <section className="b-about__section2">
                 <div className="b-about__image b-about__image--2">
                     <div className="b-about__img b-about__img--2"></div>
                     <div className="b-about__circle b-about__circle--2"></div>

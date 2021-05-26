@@ -4,11 +4,12 @@ import { Suspense } from "react";
 import routes from "./config/router/routes.js";
 import NavBar from "./components/common/NavBar";
 import Footer from "./components/common/Footer";
+import Spinner from "./components/Spinner";
 
 const App = () => {
   return (
     <Router>
-      <Suspense fallback="cargado....">
+      <Suspense fallback={<Spinner/>}>
         <div className="b-app">
           <NavBar />
           <Switch>
