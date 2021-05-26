@@ -1,0 +1,18 @@
+.b-footer {
+    height: 70px;
+    width: 100%;
+    background-color: #aaaaaa;;
+    &__icon{
+        width:30px;
+        height: 30px;
+    }
+    &__links{
+        display: flex;
+    }
+    &__description{
+        display:flex;
+        flex-direction: column;
+        margin-left: 2rem;
+        justify-content: center;
+    }
+}
