@@ -3,6 +3,7 @@ import './icons/style.css';
 import constants from '../../constants/arraysImg'
 import Carrousell from '../Carrousell';
 import Main from '../../Containers/Main';
+import Back from '../Back';
 import {useEffect, useState} from 'react';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Home = (props) => {
@@ -20,13 +21,7 @@ const Home = (props) => {
     // const [backGroundColor, setBackgroundColor] = useState(""); //cambia el color del backGround
 
     useEffect(() => {
-        // console.log("props de Home: " + props.color);
-        // const originPath = {
-        //     color: "blue",
-        //     home: true,
-        // }
-        // debugger
-        // props.colorHome(originPath);
+
         window.addEventListener('scroll', myFunction);
         return () => {
             window.removeEventListener('scroll', myFunction); //remove the listener;
@@ -34,10 +29,10 @@ const Home = (props) => {
     },[]);
 
     function myFunction() {
-        if (window.pageYOffset > 150) {
+        if (window.pageYOffset > 100) {
             document.getElementById("animation1").className = "slideUpi";
         }
-        if (window.pageYOffset> 650) {
+        if (window.pageYOffset> 350) {
             document.getElementById("animation2").className = "slideUpi"
         }
     };
@@ -54,7 +49,6 @@ const Home = (props) => {
         }
         const exitDesc = document.querySelector('.animatedImg');
         if (!exitDesc){
-            debugger
             document.querySelector(`#pic${id}`).className = 'animatedImg';
             document.querySelector(`#desc${id}`).className = 'animatedDesc';
         }
@@ -66,8 +60,11 @@ const Home = (props) => {
     return(
         <>
             <div className="b-home">
+            {/* <Back/> */}
                <Main/>
+            
                 <div className="b-home__fisrtContainer">
+                   
                     <div id="animation1" className="b-home__animation">  {/*animation slide In */}
                         <div className="b-home__title">
                             <a href="https://ashacademy.netlify.app">

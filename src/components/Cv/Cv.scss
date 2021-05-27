@@ -6,7 +6,11 @@
         flex-direction: column;
         align-items: center;
     }
+    &__width{
+        width: 80%;
+    }
     &__img{
         width:100%;
+        margin-bottom: 2rem;
     }
 }

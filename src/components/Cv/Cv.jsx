@@ -5,9 +5,11 @@ const Cv = (props) => {
  
     return(
         <div className="b-cv__main">
-            <img className="b-cv__img" src="./assets/images/CV/1.jpg" alt="" />
-            <img className="b-cv__img" src="./assets/images/CV/2.jpg" alt="" />
-            <img className="b-cv__img" src="./assets/images/CV/3.jpg" alt="" />
+            <div className="b-cv__width">
+                <img className="b-cv__img" src="./assets/images/CV/curriculum.jpg" alt="" />
+            {/* <img className="b-cv__img" src="./assets/images/CV/2.jpg" alt="" /> */}
+            {/* <img className="b-cv__img" src="./assets/images/CV/3.jpg" alt="" /> */}
+            </div>
         </div>
     )
 }
