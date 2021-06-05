@@ -10,7 +10,7 @@
     }
     &__icon{
       font-size: 2rem;
-      margin: 2rem 0;
+      margin: 2rem 0.5rem;
     }
     &__fisrtContainer{
       width: 80%;
@@ -30,8 +30,7 @@
         visibility: hidden;
     }
     &__text{
-      color: white;
-
+      margin-right: 2rem;
     }
     &__picture{
       width: 50%;
@@ -58,7 +57,7 @@
     &__container{
       display: flex;
       width: 100%;
-      justify-content: center;
+      // justify-content: center;
     }
 }
 
@@ -91,9 +90,10 @@
   color: #640166;
   animation-name: fadeIn;
   animation-duration: 1s;
-  animation-delay: 1s;
+  animation-delay: 0.3s;
   animation-fill-mode: forwards;
   width: 50%;
+  padding-left: 1rem;
 }
 
 @keyframes fadeIn{

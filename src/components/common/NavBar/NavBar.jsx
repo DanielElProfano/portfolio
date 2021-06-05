@@ -33,7 +33,7 @@ const NavBar = () => {
     return(
         <nav className="b-nav" style={{backgroundColor : `${color}`}}>
             <div className="b-nav__clock">
-                {hours}:{minutes}:{seconds}
+                {hours && <span>{hours}:{minutes}:{seconds}</span>}
             </div>
             <ul className="b-nav__menu" >
                 <NavLink 
@@ -46,7 +46,7 @@ const NavBar = () => {
                     </NavLink>
                 <NavLink    
                     exact activeClassName="b-nav__active" 
-                    onClick={() => changeColor("#c08a6a")} 
+                    onClick={() => changeColor("#599fda")} 
                     className="b-nav__options"
                     to={CV}>
                         <li className="b-nav__options">CV</li>

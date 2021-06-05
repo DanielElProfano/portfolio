@@ -3,12 +3,9 @@ import './icons/style.css';
 import constants from '../../constants/arraysImg'
 import Carrousell from '../Carrousell';
 import Main from '../../Containers/Main';
-import Back from '../Back';
 import {useEffect, useState} from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Home = (props) => {
 
-    const { colorHome } = props;
     const arrayAsh = constants.arrayAsh;
     const descriptionAsh= constants.descriptionArray;
     const arrayReciclo = constants.arrayReciclo;
@@ -18,10 +15,8 @@ const Home = (props) => {
     const [picture2, setPicture2] = useState(arrayReciclo[0]);
     const [index1, setIndex1] = useState(null);
     const [index2, setIndex2] = useState(null);
-    // const [backGroundColor, setBackgroundColor] = useState(""); //cambia el color del backGround
 
     useEffect(() => {
-
         window.addEventListener('scroll', myFunction);
         return () => {
             window.removeEventListener('scroll', myFunction); //remove the listener;
@@ -49,22 +44,19 @@ const Home = (props) => {
         }
         const exitDesc = document.querySelector('.animatedImg');
         if (!exitDesc){
-            document.querySelector(`#pic${id}`).className = 'animatedImg';
+            // document.querySelector(`#pic${id}`).className = 'animatedImg';
             document.querySelector(`#desc${id}`).className = 'animatedDesc';
         }
         else{
-            document.querySelector(`#pic${id}`).className = 'animatedImg';
+            // document.querySelector(`#pic${id}`).className = 'animatedImg';
             document.querySelector(`#desc${id}`).className = 'animatedDesc';
         }   
     }   
     return(
         <>
             <div className="b-home">
-            {/* <Back/> */}
                <Main/>
-            
-                <div className="b-home__fisrtContainer">
-                   
+                <div className="b-home__fisrtContainer"> {/* primer proyecto*/}
                     <div id="animation1" className="b-home__animation">  {/*animation slide In */}
                         <div className="b-home__title">
                             <a href="https://ashacademy.netlify.app">
@@ -84,10 +76,15 @@ const Home = (props) => {
                         <Carrousell picture={handleImage} images={arrayAsh} id={1}/>
                     </div>
                 </div>
-                <div className="b-home__fisrtContainer">
+                <div className="b-home__fisrtContainer"> {/* segundo proyecto */}
                         <div id="animation2" className="b-home__animation">  {/*animation slide In */}
                             <div className="b-home__title">
-                                <h1 className="b-home__text">Reciclo</h1>
+                                <a href="https://gitlab.com/daniel.gonzalez.guijarro/app_reciclo_back" target="_blank" rel="noreferrer">
+                                    <h1 className="b-home__text">Reciclo Back</h1>
+                                </a>
+                                <a href="https://gitlab.com/M4rta/app_reciclo_front" target="_blank" rel="noreferrer">
+                                    <h1 className="b-home__text">Reciclo front</h1>
+                                </a>
                                 <span class="b-home__icon icon-react"></span>
                                 <span class="b-home__icon icon-node-dot-js"></span>
                                 <span class="b-home__icon icon-mongodb"></span>

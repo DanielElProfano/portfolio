@@ -1,12 +1,17 @@
 import "./App.scss";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {Switch, Route, withRouter, useLocation } from "react-router-dom";
 import { Suspense } from "react";
 import routes from "./config/router/routes.js";
 import NavBar from "./components/common/NavBar";
 import Footer from "./components/common/Footer";
 import Spinner from "./components/Spinner";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
-const App = () => {
+const App = (props) => {
+
+  // const [footer, setFooter] = useState(true)
+  let location = useLocation();
+console.log("location: " + location.pathname)
   return (
   <>
     <head>
@@ -24,23 +29,32 @@ const App = () => {
   
       <title>Daniel González</title>
   </head>
-    <Router>
       <Suspense fallback={<Spinner/>}>
         <div className="b-app">
-          <NavBar />
-          <Switch>
-            {routes.map(({ path, component: Component }) => (
-              <Route path={path} exact>
-                <Component />
-              </Route>
-            ))}
-          </Switch>
-          <Footer />
+             <NavBar />
+        
+          <TransitionGroup>
+            <CSSTransition
+              key={location.key}
+              
+              appear={true}
+              classNames="fade"
+              timeout={{ enter: 1000, exit: 1000 }}
+              >
+                <Switch>
+                  {routes.map(({ path, component: Component }) => (
+                    <Route path={path} exact>
+                      <Component />
+                    </Route>
+                  ))}
+                </Switch>
+              </CSSTransition>
+            </TransitionGroup>
+          {location.pathname !== "/" && <Footer />}
         </div>
       </Suspense>
-    </Router>
   </>
   );
 };
 
-export default App;
+export default withRouter(App);
